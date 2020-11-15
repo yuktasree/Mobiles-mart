@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+  
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <title>Buy Samsung1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+        <style>
+            
+            body { 
+                margin-top:20px; 
+            }
+            .panel-title {
+                display: inline;font-weight: bold;
+            }
+            .checkbox.pull-right {
+                margin: 0; 
+            }
+            .pl-ziro {
+                padding-left: 0px; 
+            }
+            
+        </style>  
+               
+        <script type="text/javascript">
+            function minMaxMon(value, min, max) 
+            {
+                if(parseInt(value) < min) {
+                    alert("Invalid month");
+                    return "";
+                }
+                else if(parseInt(value) > max) {
+                    alert("Invalid month");
+                    return "";
+                }
+                else return value;
+            }
+            
+            function minMaxYear(value, min, max) 
+            {
+                if(parseInt(value) < min) {
+                    alert("Invalid year");
+                    return "";
+                }
+                else if(parseInt(value) > max) {
+                    alert("Invalid year");
+                    return "";
+                }
+                else return value;
+            }
+            
+            function validcvv(value)            
+            {
+                let num = value.toString();
+                let len = num.length;
+                if(len !== 3) {
+                    alert("Wrong CVV");
+                    return "";
+                }                
+                else return value;
+            }
+            
+            function cardval(value)             
+            {
+                let num = value.toString();
+                let len = num.length;
+                if(len !== 16) {
+                    alert("Invalid card number");
+                    return "";
+                }                
+                else return value;
+            }
+        </script>
+        
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-inverse" style="margin-top: -15px;">        
+        <div class="container">                       
+            <div class="navbar-header">                        
+                <a class="navbar-brand" href="#" style="padding:6px;">
+                    <img src="images/logou1.jpg" style="height:100%;">
+                </a>
+                <a class="navbar-brand" href="#" style="color: white;">Sree Mobiles</a>                     
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">                        
+                    <li><a href="users.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>       
+                    <li><a href="http://localhost/EcomPhp/mycart.php"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>                                        
+                </ul>
+            </div>                
+        </div>    
+    </nav>
+        
+        
+        <div class="container">
+            <div class="row" style="margin-top: -25px;">
+                    <h3 style="color: #c7254e; margin-left: 38%;"><b>Samsung Galaxy M31</b></h3>
+                    <h4 style="color: yellowgreen; margin-left: 34%;"><b>Space Black, 6GB RAM, 64GB Storage</b></h4>
+                    <h4 style="color: lightseagreen; margin-left: 41%;"><b>Price:₹ 16,499 only</b></h4>                    
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="images/brand0.jpg" alt="Oppo" style="background-color: lightgray; width:240px; height:500px; margin-left: 90px; margin-top: 20px;">                    
+                </div>
+                <div class="col-xs-6" style="margin-top: 8%">  
+                    
+                    
+                <div class="container" style="margin-left: 60px;">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="panel panel-default" style="height: 210px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="color: #c7254e;">
+                                        Payment Details
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form" action="http://localhost/EcomPhp/creditval.php" method="post">
+                                    <div class="form-group">
+                                        <label style="color: yellowgreen;" for="cardNumber">
+                                            CARD NUMBER</label>                                         
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="card-num" onkeypress="return event.charCode === 0 || /\d/.test(String.fromCharCode(event.charCode));" onchange="this.value = cardval(this.value)" placeholder="Enter 16-digit valid number" maxlength='16' required="required" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group">
+                                                <label style="color: yellowgreen;" for="cvCode">
+                                                    EXPIRY DATE</label>                                                  
+                                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                                    <input type="text" class="form-control" placeholder="MM" onkeypress="return event.charCode === 0 || /\d/.test(String.fromCharCode(event.charCode));" onchange="this.value = minMaxMon(this.value, 1, 12)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required maxlength="2" />
+                                                </div>
+                                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                                    <input type="text" class="form-control" placeholder="YY" onkeypress="return event.charCode === 0 || /\d/.test(String.fromCharCode(event.charCode));" onchange="this.value = minMaxYear(this.value, 21, 30)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required maxlength="2" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group">
+                                                <label style="color: yellowgreen;" for="cvvCode">
+                                                    CVV CODE</label>                                                  
+                                                <input type="password" class="form-control" placeholder="CVV" onkeypress="return event.charCode === 0 || /\d/.test(String.fromCharCode(event.charCode));" onchange="this.value = validcvv(this.value)" required maxlength="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                            <p style="background-color: yellowgreen; color: white; width: 292px; margin-left: -15px; margin-top: 25px;" class="btn btn-primary btn-md"><span style='color: #c7254e;' class="badge pull-right">₹ 16,499 only</span>Final Payment</p>
+                            
+                            <br/> <br/>
+       
+                            <button style="background-color: yellowgreen; color: white; width: 292px; margin-left: -15px;" type="submit" class="btn btn-primary btn-lg">Pay</button>
+                            
+                            <input name="mob" value="Samsung Galaxy M31 - Yellow" type="hidden">
+                            <input name="desp" value="Space Black, 6GB RAM, 64GB Storage" type="hidden">
+                            <input name="price" value="16499" type="hidden">  
+                            
+                                    </form>
+                                </div>
+                            </div>                                          
+                            
+                        </div>
+                    </div>
+                </div>
+         
+                </div>
+            </div>
+        </div>          
+                          
+    </body>
+</html>
+
